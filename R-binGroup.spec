@@ -4,14 +4,12 @@
 #
 Name     : R-binGroup
 Version  : 2.2.1
-Release  : 4
+Release  : 5
 URL      : https://cran.r-project.org/src/contrib/binGroup_2.2-1.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/binGroup_2.2-1.tar.gz
 Summary  : Evaluation and Experimental Design for Binomial Group Testing
 Group    : Development/Tools
 License  : GPL-3.0
-Requires: R-Rdpack
-Requires: R-partitions
 BuildRequires : R-Rdpack
 BuildRequires : R-partitions
 BuildRequires : buildreq-R
@@ -27,11 +25,11 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1535142682
+export SOURCE_DATE_EPOCH=1552719479
 
 %install
+export SOURCE_DATE_EPOCH=1552719479
 rm -rf %{buildroot}
-export SOURCE_DATE_EPOCH=1535142682
 export LANG=C
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
 export FCFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
@@ -66,8 +64,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export _R_CHECK_FORCE_SUGGESTS_=false
-R CMD check --no-manual --no-examples --no-codoc -l %{buildroot}/usr/lib64/R/library binGroup|| : 
-cp ~/.stash/* %{buildroot}/usr/lib64/R/library/*/libs/ || :
+R CMD check --no-manual --no-examples --no-codoc  binGroup || :
 
 
 %files

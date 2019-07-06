@@ -4,14 +4,18 @@
 #
 Name     : R-binGroup
 Version  : 2.2.1
-Release  : 11
+Release  : 12
 URL      : https://cran.r-project.org/src/contrib/binGroup_2.2-1.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/binGroup_2.2-1.tar.gz
 Summary  : Evaluation and Experimental Design for Binomial Group Testing
 Group    : Development/Tools
 License  : GPL-3.0
+Requires: R-Rdpack
+Requires: R-partitions
+Requires: R-stringi
 BuildRequires : R-Rdpack
 BuildRequires : R-partitions
+BuildRequires : R-stringi
 BuildRequires : buildreq-R
 
 %description
@@ -24,13 +28,13 @@ No detailed description available
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
-export LANG=C
-export SOURCE_DATE_EPOCH=1552719479
+export LANG=C.UTF-8
+export SOURCE_DATE_EPOCH=1562445334
 
 %install
-export SOURCE_DATE_EPOCH=1552719479
+export SOURCE_DATE_EPOCH=1562445334
 rm -rf %{buildroot}
-export LANG=C
+export LANG=C.UTF-8
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
 export FCFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
 export FFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
@@ -59,12 +63,12 @@ R CMD INSTALL --preclean --install-tests --built-timestamp=${SOURCE_DATE_EPOCH} 
 cp ~/.stash/* %{buildroot}/usr/lib64/R/library/*/libs/ || :
 %{__rm} -rf %{buildroot}%{_datadir}/R/library/R.css
 %check
-export LANG=C
+export LANG=C.UTF-8
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export _R_CHECK_FORCE_SUGGESTS_=false
-R CMD check --no-manual --no-examples --no-codoc  binGroup || :
+R CMD check --no-manual --no-examples --no-codoc binGroup || :
 
 
 %files

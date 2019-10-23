@@ -4,7 +4,7 @@
 #
 Name     : R-binGroup
 Version  : 2.2.1
-Release  : 12
+Release  : 13
 URL      : https://cran.r-project.org/src/contrib/binGroup_2.2-1.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/binGroup_2.2-1.tar.gz
 Summary  : Evaluation and Experimental Design for Binomial Group Testing
@@ -12,11 +12,11 @@ Group    : Development/Tools
 License  : GPL-3.0
 Requires: R-Rdpack
 Requires: R-partitions
-Requires: R-stringi
 BuildRequires : R-Rdpack
 BuildRequires : R-partitions
 BuildRequires : R-stringi
 BuildRequires : buildreq-R
+BuildRequires : util-linux
 
 %description
 No detailed description available
@@ -29,10 +29,10 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1562445334
+export SOURCE_DATE_EPOCH=1571802579
 
 %install
-export SOURCE_DATE_EPOCH=1562445334
+export SOURCE_DATE_EPOCH=1571802579
 rm -rf %{buildroot}
 export LANG=C.UTF-8
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "

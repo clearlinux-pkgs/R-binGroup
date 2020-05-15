@@ -4,7 +4,7 @@
 #
 Name     : R-binGroup
 Version  : 2.2.1
-Release  : 16
+Release  : 17
 URL      : https://cran.r-project.org/src/contrib/binGroup_2.2-1.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/binGroup_2.2-1.tar.gz
 Summary  : Evaluation and Experimental Design for Binomial Group Testing
@@ -14,30 +14,29 @@ Requires: R-Rdpack
 Requires: R-partitions
 BuildRequires : R-Rdpack
 BuildRequires : R-partitions
-BuildRequires : R-stringi
 BuildRequires : buildreq-R
-BuildRequires : util-linux
 
 %description
 No detailed description available
 
 %prep
 %setup -q -c -n binGroup
+cd %{_builddir}/binGroup
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1571802579
+export SOURCE_DATE_EPOCH=1589586949
 
 %install
-export SOURCE_DATE_EPOCH=1571802579
+export SOURCE_DATE_EPOCH=1589586949
 rm -rf %{buildroot}
 export LANG=C.UTF-8
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
-export FCFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
-export FFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
+export FCFLAGS="$FFLAGS -O3 -flto -fno-semantic-interposition "
+export FFLAGS="$FFLAGS -O3 -flto -fno-semantic-interposition "
 export CXXFLAGS="$CXXFLAGS -O3 -flto -fno-semantic-interposition "
 export AR=gcc-ar
 export RANLIB=gcc-ranlib

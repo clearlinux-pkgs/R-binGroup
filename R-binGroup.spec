@@ -4,7 +4,7 @@
 #
 Name     : R-binGroup
 Version  : 2.2.1
-Release  : 29
+Release  : 30
 URL      : https://cran.r-project.org/src/contrib/binGroup_2.2-1.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/binGroup_2.2-1.tar.gz
 Summary  : Evaluation and Experimental Design for Binomial Group Testing
